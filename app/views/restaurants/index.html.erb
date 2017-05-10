@@ -1,0 +1,9 @@
+<h1>Restaurants#index</h1>
+<%= link_to "Add a restaurant", new_restaurant_path %>
+<ol>
+  <% @restaurants.each do |restaurant| %>
+    <li><%= link_to restaurant.name, restaurant_path(restaurant) %>
+    <br>
+    <%= link_to "Edit", edit_restaurant_path(restaurant) %> | <%= link_to "Delete", restaurant_path(restaurant), method: :delete, data: { confirm: "Do you want to remove this restau?" } %></li>
+<% end %>
+</ol>
